@@ -14,8 +14,7 @@
       <div class="container-fluid" id="map"></div>
     </div>
     <div class="row">
-      <div class="col-sm-6" id="brush"></div>
-      <div class="col-sm-6 text-center h4" id="counter"></div>
+      <div class="col-sm-12" id="legend"></div>
     </div>
   </div>
 
@@ -28,6 +27,8 @@
     new Runtime().module(notebook, name => {
       if (name === "map") {
         return new Inspector(document.querySelector("#map"));
+      } else if (name === "legend") {
+        return new Inspector(document.querySelector("#legend"));
       } else if (name === "maplibregl") {
         return true;
       } else if (name === "workbook") {
