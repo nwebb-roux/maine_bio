@@ -23,27 +23,23 @@
     // Load the Observable runtime and inspector.
     import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
     // load notebook
-    //import notebook from "https://api.observablehq.com/@pbogden/brushable-earthquakes-ii.js?v=3";
     import notebook from "https://api.observablehq.com/@nwebb-roux/maine-biosciences.js?v=3";
-    
-    
-    new Runtime().module(notebook, Inspector.into(document.body));
 
-//     new Runtime().module(notebook, name => {
-//       if (name === "map") {
-//         return new Inspector(document.querySelector("#map"));
-//       } else if (name === "maplibregl") {
-//         return true;
-//       } else if (name === "workbook") {
-//         return true;
-//       } else if (name === "latlongdata") {
-//         return true;
-//       } else if (name === "data") {
-//         return true;
-//       } else if (name === "z") {
-//         return true;
-//       }
-//     });
+    new Runtime().module(notebook, name => {
+      if (name === "map") {
+        return new Inspector(document.querySelector("#map"));
+      } else if (name === "maplibregl") {
+        return true;
+      } else if (name === "workbook") {
+        return true;
+      } else if (name === "latlongdata") {
+        return true;
+      } else if (name === "data") {
+        return true;
+      } else if (name === "z") {
+        return true;
+      }
+    });
   </script>
 </body>
 </html>
